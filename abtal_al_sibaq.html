@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#10172d">
+<title>أبطال السباق | لعبة تعليمية للأطفال</title>
+<style>
+:root{--bg:#10172d;--panel:#1b2645;--panel2:#243252;--cyan:#54e5f2;--yellow:#ffd84d;--green:#41e39a;--pink:#ff72b6;--red:#ff6b78;--text:#f7f9ff;--muted:#b7c4df}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#233866 0,#10172d 55%);color:var(--text);font-family:system-ui,"Tahoma",sans-serif;min-height:100vh;user-select:none}button,input,select{font:inherit}button{cursor:pointer;border:0;color:white;font-weight:900;touch-action:manipulation}button:focus-visible,input:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}.app{max-width:1000px;margin:auto;padding:14px;min-height:100vh;display:flex;flex-direction:column}.topbar{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#17213b;border:1px solid #34476e;border-radius:20px;padding:12px 16px;box-shadow:0 10px 30px #0003}.brand{display:flex;align-items:center;gap:10px}.logo{font-size:2rem}.brand h1{font-size:clamp(1rem,3vw,1.4rem);margin:0;color:var(--yellow)}.top-actions{display:flex;gap:7px;flex-wrap:wrap}.small-btn{padding:9px 12px;border-radius:12px;background:#33466d;font-size:.9rem}.screen{width:100%;margin:auto;padding:22px 0}.panel{background:linear-gradient(145deg,#1b2949,#17213b);border:1px solid #34476e;border-radius:25px;padding:clamp(16px,4vw,28px);box-shadow:0 18px 45px #0003}.center{text-align:center}.hero{font-size:clamp(3rem,10vw,5rem);margin:2px 0}.title{font-size:clamp(1.5rem,5vw,2.3rem);margin:8px 0;color:var(--cyan)}.muted{color:var(--muted);line-height:1.7}.name-input{width:100%;max-width:420px;background:#0d1428;color:white;border:2px solid #405579;border-radius:15px;padding:13px;text-align:center;margin:12px auto 16px;display:block}.row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}.btn{padding:13px 18px;border-radius:15px;background:linear-gradient(135deg,#1689e8,#5a5ce2);box-shadow:0 5px 0 #163d7b;transition:transform .12s}.btn:active,.mode-card:active{transform:scale(.97)}.btn.green{background:linear-gradient(135deg,#0dbb81,#168d91);box-shadow:0 5px 0 #075b60}.btn.pink{background:linear-gradient(135deg,#e64e9a,#a34ee5);box-shadow:0 5px 0 #63328a}.btn.gold{background:linear-gradient(135deg,#e9a817,#ef6d26);box-shadow:0 5px 0 #8c4715}.btn.gray{background:#354666;box-shadow:0 5px 0 #202b43}.voice-choice{flex:1;min-width:130px;padding:14px;border-radius:15px;background:#2a3858;border:2px solid transparent}.voice-choice.active{border-color:var(--cyan);background:#174e6b}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.mode-card{padding:18px 12px;border-radius:20px;min-height:115px;background:linear-gradient(145deg,#2e5cc0,#4533a5);border:2px solid #789cff;box-shadow:0 7px 0 #182d69;transition:transform .12s}.mode-card:nth-child(2){background:linear-gradient(145deg,#079a83,#116b86);border-color:#58e8c9;box-shadow:0 7px 0 #064b51}.mode-card:nth-child(3){background:linear-gradient(145deg,#873ac4,#bd3f91);border-color:#ed9cff;box-shadow:0 7px 0 #55226d}.mode-card:nth-child(4){background:linear-gradient(145deg,#cf7b14,#bd452d);border-color:#ffd277;box-shadow:0 7px 0 #703016}.mode-card:nth-child(5){background:linear-gradient(145deg,#2476b7,#2354a7);border-color:#7edbff;box-shadow:0 7px 0 #163b70}.mode-card:nth-child(6){background:linear-gradient(145deg,#bb3970,#8b2fa6);border-color:#ff9dc9;box-shadow:0 7px 0 #5e205c}.mode-icon{display:block;font-size:2rem;margin-bottom:5px}.mode-title{font-size:1.1rem}.stats{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:12px}.stat{background:#111a30;border:1px solid #35496d;border-radius:13px;padding:9px 13px;font-weight:900}.race-track{height:155px;position:relative;overflow:hidden;border-radius:20px;border:3px solid #53698d;margin:14px 0;background:repeating-linear-gradient(0deg,#34465c 0 28px,#2b3a4d 28px 56px);display:flex;align-items:center}.track-line{position:absolute;left:0;right:0;top:50%;border-top:4px dashed #f8dc5a}.car{position:absolute;left:8%;font-size:3.2rem;transition:left .55s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 6px 3px #0005);z-index:2}.finish{position:absolute;right:4%;height:100%;width:25px;background:repeating-conic-gradient(#fff 0% 25%,#111 0% 50%) 50%/18px 18px}.question-panel{text-align:center;margin:12px 0}.question{font-size:clamp(1.4rem,5vw,2rem);font-weight:1000;color:var(--cyan);margin:4px 0 8px}.hint{color:var(--muted);margin:0 0 12px}.answers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.answer{min-height:78px;padding:12px 5px;border-radius:17px;background:linear-gradient(145deg,#3e73d6,#3544a4);border:2px solid #8db2ff;box-shadow:0 5px 0 #1b2d70;font-size:clamp(1.6rem,6vw,2.4rem);overflow-wrap:anywhere}.answer:disabled{opacity:.7}.answer.correct{background:#138d68;border-color:#76ffd0}.answer.wrong{background:#a63851;border-color:#ff9da9}.feedback{min-height:36px;font-size:1.05rem;font-weight:900;color:var(--yellow);text-align:center;padding:8px 0}.bottom-actions{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:14px}.progress{height:9px;background:#0b1225;border-radius:99px;overflow:hidden;margin:12px 0}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--cyan));transition:width .3s}.badge-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.badge-card{background:#111a30;border:1px solid #35496d;border-radius:16px;padding:14px;text-align:center}.badge-card .emoji{font-size:2rem}.badge-card.locked{opacity:.45;filter:grayscale(1)}.result-score{font-size:3rem;font-weight:1000;color:var(--yellow)}.hidden{display:none!important}.footer{text-align:center;color:#7f91b6;font-size:.8rem;padding:15px 0 3px;margin-top:auto}.pill{display:inline-block;padding:5px 10px;border-radius:99px;background:#26395b;color:var(--cyan);font-weight:800;font-size:.85rem}
+@media(max-width:560px){.app{padding:9px}.topbar{padding:10px}.brand h1{max-width:150px}.small-btn{padding:8px;font-size:.8rem}.screen{padding:15px 0}.grid{gap:9px}.mode-card{padding:14px 7px;min-height:105px}.answers{gap:7px}.answer{min-height:68px}.race-track{height:125px}.panel{border-radius:20px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+ <div class="brand"><span class="logo">🏎️</span><h1>أبطال السباق</h1></div>
+ <div class="top-actions">
+  <button class="small-btn" id="soundBtn" onclick="toggleSound()">🔊 الصوت</button>
+  <button class="small-btn" onclick="toggleFullscreen()">⛶ كامل</button>
+ </div>
+</header>
+
+<section id="welcome" class="screen panel center">
+ <div class="hero">🦁🏆</div>
+ <h2 class="title">جاهز تصير بطل السباق؟</h2>
+ <p class="muted">تعلّم، اجمع النجوم، وافتح أوسمة الأبطال! 🚀</p>
+ <label for="playerName" class="muted">اسم البطل أو البطلة</label>
+ <input id="playerName" class="name-input" maxlength="18" value="محمد" placeholder="اكتب اسمك هنا">
+ <p class="muted">اختر الصوت الذي تفضّله</p>
+ <div class="row" style="max-width:440px;margin:0 auto 18px">
+  <button id="maleVoice" class="voice-choice active" onclick="chooseVoice('male')">👦 صوت ذكوري</button>
+  <button id="femaleVoice" class="voice-choice" onclick="chooseVoice('female')">👧 صوت أنثوي</button>
+ </div>
+ <div class="row"><button class="btn green" onclick="enterGame()">ابدأ المغامرة 🎮</button><button class="btn gray" onclick="showAwards()">🏅 أوسمتي</button></div>
+ <p class="muted" style="font-size:.85rem;margin-bottom:0">تعمل اللعبة دون إنترنت. جودة الصوت تعتمد على الأصوات المثبّتة في جهازك.</p>
+</section>
+
+<section id="home" class="screen hidden">
+ <div class="panel center">
+  <div class="hero">🏁✨</div><h2 class="title" id="helloTitle">أهلاً يا بطل!</h2>
+  <p class="muted">اختر مسابقتك، وكل إجابة صحيحة تقرّب سيارتك من خط النهاية.</p>
+  <div class="stats">
+   <div class="stat">⭐ مجموع النجوم: <span id="totalStars">0</span></div>
+   <div class="stat">🏆 انتصارات: <span id="wins">0</span></div>
+   <div class="stat">🎖️ الأوسمة: <span id="awardCount">0</span></div>
+  </div>
+  <div class="grid">
+   <button class="mode-card" onclick="startGame('letters')"><span class="mode-icon">📚</span><span class="mode-title">الحروف العربية</span><br><small>اسمع واختر الحرف</small></button>
+   <button class="mode-card" onclick="startGame('diacritics')"><span class="mode-icon">✍️</span><span class="mode-title">حركات الحروف</span><br><small>بَ بِ بُ بْ بّ</small></button>
+   <button class="mode-card" onclick="startGame('english')"><span class="mode-icon">🔤</span><span class="mode-title">English ABC</span><br><small>اسمع الحرف بالإنجليزية</small></button>
+   <button class="mode-card" onclick="startGame('numbers')"><span class="mode-icon">🔢</span><span class="mode-title">الأرقام والعد</span><br><small>من ١ إلى ٢٠</small></button>
+   <button class="mode-card" onclick="startGame('colors')"><span class="mode-icon">🎨</span><span class="mode-title">ألوان وأشكال</span><br><small>اكتشف اللون والشكل</small></button>
+   <button class="mode-card" onclick="startGame('challenge')"><span class="mode-icon">⚡</span><span class="mode-title">تحدّي الأبطال</span><br><small>١٠ أسئلة متنوعة</small></button>
+  </div>
+  <div class="bottom-actions">
+   <button class="btn gold" onclick="startTournament()">🏆 بطولة السرعة</button>
+   <button class="btn pink" onclick="showAwards()">🎖️ الأوسمة والإنجازات</button>
+   <button class="btn gray" onclick="backToWelcome()">⚙️ تغيير الاسم والصوت</button>
+  </div>
+ </div>
+</section>
+
+<section id="game" class="screen hidden">
+ <div class="stats">
+  <div class="stat">⭐ النقاط: <span id="score">0</span></div><div class="stat">🔥 متتالية: <span id="streak">0</span></div><div class="stat">🏁 السؤال: <span id="qCount">1/10</span></div>
+ </div>
+ <div class="progress"><span id="progressBar"></span></div>
+ <div class="race-track"><div class="track-line"></div><div class="car" id="car">🏎️💨</div><div class="finish"></div></div>
+ <div class="panel question-panel">
+  <span class="pill" id="modeLabel">سباق الحروف</span>
+  <h2 class="question" id="question">استعدّ!</h2>
+  <p class="hint" id="hint">استمع جيداً ثم اختر الإجابة</p>
+  <div class="row"><button class="btn gray" onclick="repeatQuestion()">🔁 أعد الصوت</button></div>
+  <div class="feedback" id="feedback" aria-live="polite"></div>
+  <div class="answers" id="answers"></div>
+ </div>
+ <div class="bottom-actions"><button class="btn gray" onclick="quitGame()">🏠 القائمة الرئيسية</button></div>
+</section>
+
+<section id="result" class="screen panel center hidden">
+ <div class="hero" id="resultEmoji">🏆</div><h2 class="title" id="resultTitle">أحسنت!</h2>
+ <p class="muted" id="resultMessage">لقد أنهيت السباق.</p>
+ <div class="result-score"><span id="finalScore">0</span> ⭐</div>
+ <p class="muted" id="resultExtra"></p>
+ <div class="bottom-actions"><button class="btn green" onclick="startGame(lastMode)">🔁 العب مرة ثانية</button><button class="btn gold" onclick="startTournament()">🏆 بطولة جديدة</button><button class="btn gray" onclick="goHome()">🏠 القائمة</button></div>
+</section>
+
+<section id="awards" class="screen panel hidden">
+ <div class="center"><div class="hero">🎖️</div><h2 class="title">متحف إنجازاتك</h2><p class="muted">كل تدريب يقربك من وسام جديد!</p></div>
+ <div id="badgeList" class="badge-grid"></div>
+ <div class="bottom-actions"><button class="btn gray" onclick="goHome()">رجوع</button></div>
+</section>
+<footer class="footer">أبطال السباق • لعبة تعليمية مجانية تعمل محلياً على جهازك 💛</footer>
+</div>
+
+<script>
+'use strict';
+const $ = id => document.getElementById(id);
+const letters = ['أ','ب','ت','ث','ج','ح','خ','د','ذ','ر','ز','س','ش','ص','ض','ط','ظ','ع','غ','ف','ق','ك','ل','م','ن','هـ','و','ي'];
+const diacritics = [{v:'بَ',say:'باء فتحة'}, {v:'بِ',say:'باء كسرة'}, {v:'بُ',say:'باء ضمة'}, {v:'بْ',say:'باء سكون'}, {v:'بّ',say:'باء شدة'}];
+const english = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+const numberWords = ['واحد','اثنان','ثلاثة','أربعة','خمسة','ستة','سبعة','ثمانية','تسعة','عشرة','أحد عشر','اثنا عشر','ثلاثة عشر','أربعة عشر','خمسة عشر','ستة عشر','سبعة عشر','ثمانية عشر','تسعة عشر','عشرون'];
+const colors = [{v:'🔴',name:'الأحمر'},{v:'🔵',name:'الأزرق'},{v:'🟢',name:'الأخضر'},{v:'🟡',name:'الأصفر'},{v:'🟣',name:'البنفسجي'},{v:'🟠',name:'البرتقالي'}];
+const shapes = [{v:'🔺',name:'المثلث'},{v:'🟦',name:'المربع'},{v:'⚪',name:'الدائرة'},{v:'⭐',name:'النجمة'},{v:'❤️',name:'القلب'},{v:'⬡',name:'السداسي'}];
+const modes = {letters:'الحروف العربية',diacritics:'حركات الحروف',english:'English ABC',numbers:'الأرقام والعد',colors:'ألوان وأشكال',challenge:'تحدّي الأبطال',tournament:'بطولة السرعة'};
+const awardDefs = [
+ {id:'first',icon:'🌟',name:'أول انطلاقة',desc:'أكمل أول سباق',test:p=>p.games>=1},
+ {id:'five',icon:'🔥',name:'نجم الحماس',desc:'أجب عن 5 أسئلة متتالية',test:p=>p.bestStreak>=5},
+ {id:'hundred',icon:'💯',name:'جامع النجوم',desc:'اجمع 100 نقطة في المجموع',test:p=>p.totalStars>=100},
+ {id:'champion',icon:'🏆',name:'بطل البطولة',desc:'أكمل بطولة السرعة',test:p=>p.tournaments>=1},
+ {id:'perfect',icon:'🎯',name:'عين الصقر',desc:'أنهِ سباقاً دون أخطاء',test:p=>p.perfect>=1},
+ {id:'explorer',icon:'🧭',name:'المستكشف',desc:'جرّب 4 أنواع مختلفة',test:p=>p.modes.length>=4}
+];
+let player='بطل',voiceType='male',soundOn=true,lastMode='letters',mode='letters',questionData=null,score=0,streak=0,questionNo=0,totalQuestions=10,errors=0,answered=false,tournament=false,usedModes=[];
+let profile={totalStars:0,wins:0,games:0,bestStreak:0,tournaments:0,perfect:0,modes:[],awards:[]};
+try{const saved=JSON.parse(localStorage.getItem('championsRaceProfile')||'null');if(saved)profile={...profile,...saved};}catch(e){}
+function saveProfile(){try{localStorage.setItem('championsRaceProfile',JSON.stringify(profile));}catch(e){}}
+function showOnly(id){['welcome','home','game','result','awards'].forEach(s=>$(s).classList.toggle('hidden',s!==id));}
+function chooseVoice(v){voiceType=v;$('maleVoice').classList.toggle('active',v==='male');$('femaleVoice').classList.toggle('active',v==='female');}
+function speak(text,lang='ar-SA'){if(!soundOn||!('speechSynthesis'in window))return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(String(text));u.lang=lang;u.rate=.88;u.pitch=voiceType==='male'?.86:1.13;const vs=speechSynthesis.getVoices();let preferred=vs.find(x=>x.lang.toLowerCase().startsWith(lang.toLowerCase().split('-')[0])&&(voiceType==='male'?/male|man|david|mark|arabic/i.test(x.name):/female|woman|zira|samantha|arabic/i.test(x.name)));if(!preferred)preferred=vs.find(x=>x.lang.toLowerCase().startsWith(lang.toLowerCase().split('-')[0]));if(preferred)u.voice=preferred;speechSynthesis.speak(u);}catch(e){}}
+function toggleSound(){soundOn=!soundOn;$('soundBtn').textContent=soundOn?'🔊 الصوت':'🔇 صامت';if(!soundOn&&'speechSynthesis'in window)speechSynthesis.cancel();}
+function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen?.().catch(()=>{});}else document.exitFullscreen?.();}
+function enterGame(){player=$('playerName').value.trim().slice(0,18)||'بطل';$('helloTitle').textContent=`أهلاً يا ${player}! 🚗`;refreshHome();showOnly('home');speak(`أهلاً يا ${player}! هل أنت مستعد للسباق؟`);}
+function backToWelcome(){ $('playerName').value=player;showOnly('welcome');}
+function refreshHome(){$('totalStars').textContent=profile.totalStars;$('wins').textContent=profile.wins;$('awardCount').textContent=profile.awards.length;}
+function goHome(){refreshHome();showOnly('home');}
+function showAwards(){renderAwards();showOnly('awards');}
+function renderAwards(){$('badgeList').innerHTML='';awardDefs.forEach(a=>{const earned=profile.awards.includes(a.id);const d=document.createElement('div');d.className='badge-card'+(earned?'':' locked');d.innerHTML=`<div class="emoji">${earned?a.icon:'🔒'}</div><strong>${a.name}</strong><p class="muted">${a.desc}</p><span class="pill">${earned?'تم فتح الوسام':'لم يُفتح بعد'}</span>`;$('badgeList').appendChild(d);});}
+function startTournament(){tournament=true;startGame('tournament');}
+function startGame(m){mode=m;lastMode=m;tournament=m==='tournament';score=0;streak=0;questionNo=0;errors=0;answered=false;usedModes=[];totalQuestions=(m==='tournament'||m==='challenge')?10:8;showOnly('game');$('modeLabel').textContent=modes[m]||'السباق';$('score').textContent='0';$('streak').textContent='0';$('feedback').textContent='';nextQuestion();}
+function pick(arr){return arr[Math.floor(Math.random()*arr.length)];}
+function shuffled(arr){return [...arr].sort(()=>Math.random()-.5);}
+function buildQuestion(which){
+ let correct,prompt,spoken,hint,opts,lang='ar-SA';
+ if(which==='letters'){correct=pick(letters);prompt='أيّ حرف سمعت؟';spoken=correct;hint='استمع إلى الحرف ثم اختره';opts=[correct,...shuffled(letters.filter(x=>x!==correct)).slice(0,2)];}
+ else if(which==='diacritics'){const x=pick(diacritics);correct=x.v;prompt='اختر المقطع الذي سمعته';spoken=x.say;hint='انتبه لحركة الباء';opts=[correct,...shuffled(diacritics.filter(y=>y.v!==correct).map(y=>y.v)).slice(0,2)];}
+ else if(which==='english'){correct=pick(english);prompt='Which letter did you hear?';spoken=correct;lang='en-US';hint='Listen, then tap the matching letter';opts=[correct,...shuffled(english.filter(x=>x!==correct)).slice(0,2)];}
+ else if(which==='numbers'){const n=Math.floor(Math.random()*20);correct=String(n+1);prompt='اسمع العدد واختر رقمه';spoken=numberWords[n];hint='عدّ بهدوء قبل أن تختار';opts=[correct,...shuffled(Array.from({length:20},(_,i)=>String(i+1)).filter(x=>x!==correct)).slice(0,2)];}
+ else if(which==='colors'){const useColor=Math.random()<.6;const item=pick(useColor?colors:shapes);correct=item.v;prompt=useColor?`أين اللون ${item.name}؟`:`أين ${item.name}؟`;spoken=prompt;hint='اختر الصورة الصحيحة';opts=[correct,...shuffled((useColor?colors:shapes).filter(x=>x.v!==correct).map(x=>x.v)).slice(0,2)];}
+ else {const pool=['letters','diacritics','english','numbers','colors'];const chosen=pick(pool);return buildQuestion(chosen);}
+ return {which,correct,prompt,spoken,lang,hint,opts:shuffled(opts)};
+}
+function nextQuestion(){if(questionNo>=totalQuestions){finishGame();return;}answered=false;questionNo++;$('qCount').textContent=`${questionNo}/${totalQuestions}`;$('progressBar').style.width=`${(questionNo-1)/totalQuestions*100}%`;$('car').style.left=`${8+(questionNo-1)/(totalQuestions)*65}%`;$('feedback').textContent='';const chosen=(mode==='challenge'||mode==='tournament')?pick(['letters','diacritics','english','numbers','colors']):mode;questionData=buildQuestion(chosen);usedModes.push(chosen);$('modeLabel').textContent=(mode==='challenge'||mode==='tournament')?`سؤال متنوع ${questionNo}`:modes[mode];$('question').textContent=questionData.prompt;$('hint').textContent=questionData.hint;$('answers').innerHTML='';questionData.opts.forEach(opt=>{const b=document.createElement('button');b.className='answer';b.textContent=opt;b.onclick=()=>answer(opt,b);$('answers').appendChild(b);});setTimeout(()=>speak(questionData.spoken,questionData.lang),220);updateStats();}
+function updateStats(){$('score').textContent=score;$('streak').textContent=streak;$('progressBar').style.width=`${(questionNo-1)/totalQuestions*100}%`;}
+function beep(ok){if(!soundOn)return;try{const ctx=new (window.AudioContext||window.webkitAudioContext)();const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.frequency.value=ok?680:190;g.gain.setValueAtTime(.13,ctx.currentTime);g.gain.exponentialRampToValueAtTime(.01,ctx.currentTime+.16);o.start();o.stop(ctx.currentTime+.16);o.onended=()=>ctx.close();}catch(e){}}
+function answer(value,button){if(answered)return;if(value===questionData.correct){answered=true;score+=10;streak++;profile.bestStreak=Math.max(profile.bestStreak,streak);button.classList.add('correct');document.querySelectorAll('.answer').forEach(b=>b.disabled=true);$('feedback').textContent=pick([`برافو يا ${player}! 🌟`,`كفو! إجابة صحيحة 🏎️`,`ممتاز يا بطل! 🎉`]);$('car').style.left=`${Math.min(78,8+questionNo/totalQuestions*70)}%`;beep(true);speak(pick([`أحسنت يا ${player}!`,`إجابة صحيحة!`,`ممتاز!`]),'ar-SA');}else{errors++;streak=0;button.classList.add('wrong');button.disabled=true;$('feedback').textContent='قريب جداً! جرّب خياراً آخر 💪';beep(false);speak('حاول مرة أخرى','ar-SA');}updateStats();if(answered)setTimeout(nextQuestion,1050);}
+function repeatQuestion(){if(questionData)speak(questionData.spoken,questionData.lang);}
+function finishGame(){profile.games++;profile.wins++;profile.totalStars+=score;if(tournament)profile.tournaments++;if(errors===0)profile.perfect++;usedModes.forEach(m=>{if(!profile.modes.includes(m))profile.modes.push(m);});const newAwards=[];awardDefs.forEach(a=>{if(a.test(profile)&&!profile.awards.includes(a.id)){profile.awards.push(a.id);newAwards.push(a);}});saveProfile();$('progressBar').style.width='100%';$('finalScore').textContent=score;$('resultEmoji').textContent=errors===0?'👑':score>=60?'🏆':'🚗';$('resultTitle').textContent=errors===0?'سباق مثالي!':score>=60?'بطل رائع!':'أحسنت، واصل التدريب!';$('resultMessage').textContent=`يا ${player}، أنهيت ${modes[mode]||'السباق'}!`;
+$('resultExtra').textContent=`إجابات صحيحة: ${score/10} من ${totalQuestions} • أخطاء: ${errors}`+(newAwards.length?` • وسام جديد: ${newAwards.map(a=>a.name).join('، ')}`:'');showOnly('result');speak(errors===0?`رائع يا ${player}! فزت بسباق مثالي!`:`أحسنت يا ${player}! حصلت على ${score} نقطة.`);}
+function quitGame(){if('speechSynthesis'in window)speechSynthesis.cancel();goHome();}
+if('speechSynthesis'in window)speechSynthesis.getVoices();
+refreshHome();
+</script>
+</body>
+</html>
